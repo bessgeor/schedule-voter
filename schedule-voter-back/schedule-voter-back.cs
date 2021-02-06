@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 using Newtonsoft.Json;
@@ -18,6 +19,8 @@ namespace schedule_voter_back
 				[HttpTrigger(AuthorizationLevel.Anonymous, "put", "post", Route = null)] HttpRequest req,
 				ILogger log)
 		{
+			var db = new _Db.Db();
+			await db.Database.MigrateAsync();
 
 			log.LogInformation("C# HTTP trigger function processed a request.");
 
