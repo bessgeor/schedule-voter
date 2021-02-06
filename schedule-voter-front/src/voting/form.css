@@ -1,0 +1,82 @@
+.form {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.form > h1 {
+	font-size: 1.5em;
+	margin: 0;
+}
+
+.account-names {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.account-name {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin: 5px 0;
+}
+
+.account-name > label {
+	min-width: 120px;
+}
+.account-name > input {
+	min-width: 180px;
+	font-size: 1.25em;
+}
+
+.dates {
+	flex: 1;
+	overflow: hidden auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.date-button {
+	padding: 5px;
+	margin: 5px;
+	background-color: ivory;
+	cursor: pointer;
+	user-select: none;
+}
+
+.date-button:hover .date-button__header {
+	color:orange;
+}
+
+.date-button__votes {
+	display: flex;
+	flex-direction: column;
+	font-size: .9em;
+}
+
+.submit-panel {
+	margin-top: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.submit-button {
+	padding: 2.5px;
+	font-size: 1.25em;
+}
+
+.validation-error {
+	font-weight: bold;
+	color: darkred;
+}

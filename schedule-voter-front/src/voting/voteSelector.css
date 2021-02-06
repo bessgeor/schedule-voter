@@ -1,0 +1,43 @@
+.vote-selector {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: cornsilk;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.vote-selector__date-list {
+	flex: 1;
+	display: flex;
+	overflow: hidden auto;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.voter {
+	font-size: 1.5em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.voter>select {
+	margin-left: 5px;
+	font-size: 1.5em;
+}
+.voter__vote-0 {
+	color: darkred
+}
+.voter__vote-1 {
+	color: darkorange
+}
+.voter__vote-2 {
+	color: darkgreen
+}
