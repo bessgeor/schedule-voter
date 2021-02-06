@@ -41,7 +41,7 @@ const disAccRegex = /^[\w\d\_\-]+\#\d\d\d\d$/
 export function Form({ viewResults, dates, staticName, onApprove, isLoading, gw2User, disUser, votes, setGw2User, setDisUser, setVotes }: Model) {
 	const onVote = React.useCallback((v: Voting) => setVotes(old => old.map(o => v.tourney.isSame(o.tourney) ? v : o)), [setVotes])
 
-	const approve = React.useCallback(() => onApprove({ staticName, gw2User, disUser, votes }), [gw2User, disUser, votes, staticName, onApprove])
+	const approve = React.useCallback(() => onApprove({ staticName, gw2Account: gw2User, disAccount: disUser, votes }), [gw2User, disUser, votes, staticName, onApprove])
 
 	const [voteSelection, setVoteSelection] = React.useState<number | null>(null)
 	const closeVotes = React.useCallback(() => setVoteSelection(null), [setVoteSelection])

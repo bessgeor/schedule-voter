@@ -20,7 +20,7 @@ export type Voting = {
 
 export type Votes = {
 	staticName: string
-	gw2User: string
-	disUser: string
+	gw2Account: string
+	disAccount: string
 	votes: Voting[]
 }
