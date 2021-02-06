@@ -11,6 +11,10 @@
 	font-size: 1.5em;
 	margin: 0;
 }
+.form > h1 > button {
+	font-size: 1em;
+	float: right;
+}
 
 .account-names {
 	display: flex;

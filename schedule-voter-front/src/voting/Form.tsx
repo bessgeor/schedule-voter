@@ -90,10 +90,7 @@ export function Form({ viewResults, dates, staticName, onApprove, isLoading, gw2
 	return (
 		<div className="form">
 			{voteSelection !== null && <VoteSelector selection={groupedDates[voteSelection]} onVote={onVote} onClose={closeVotes} /> || null}
-			<h1>Расписание статика {staticName}</h1>
-			<div className="submit-panel">
-				<button type="button" className="submit-button" onClick={viewResults}>Посмотреть результаты</button>
-			</div>
+			<h1>Расписание статика {staticName} <button type="button" className="submit-button" onClick={viewResults}>Посмотреть результаты</button></h1>
 			<div className="account-inputs">
 				<div className="account-name">
 					<label>Аккаунт GW2:</label>
