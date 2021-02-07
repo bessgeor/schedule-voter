@@ -36,7 +36,7 @@ function DateButton({ voteCounts, onSelect, idx, date}: { date: string, voteCoun
 }
 
 const gw2AccRegex = /^[\w\d\_\-]+\.\d\d\d\d$/
-const disAccRegex = /^[\w\d\_\-]+\#\d\d\d\d$/
+const disAccRegex = /^[\w\d\_\-\(\)]+\#\d\d\d\d$/
 
 export function Form({ viewResults, dates, staticName, onApprove, isLoading, gw2User, disUser, votes, setGw2User, setDisUser, setVotes }: Model) {
 	const onVote = React.useCallback((v: Voting) => setVotes(old => old.map(o => v.tourney.isSame(o.tourney) ? v : o)), [setVotes])
