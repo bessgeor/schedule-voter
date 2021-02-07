@@ -46,7 +46,7 @@ function App() {
     if (voteResult)
     {
       const aborter = new AbortController()
-      fetch('/approve', {
+      fetch('/api/approve', {
         method: 'PUT',
         signal: aborter.signal,
         body: JSON.stringify(voteResult),

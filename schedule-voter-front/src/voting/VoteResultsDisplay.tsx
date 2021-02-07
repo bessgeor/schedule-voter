@@ -51,7 +51,7 @@ export function VoteResultsDisplay({ staticName, dates, voted, goVote }: VoteRes
 
 	React.useEffect(() => {
 		const aborter = new AbortController()
-		fetch('/results', {
+		fetch('/api/results', {
 			method: 'POST',
 			signal: aborter.signal,
 			body: JSON.stringify({ staticName, dates }),
