@@ -45,7 +45,8 @@ namespace schedule_voter_back
 			var result =
 				dbResult
 					.GroupBy(x => x.Date, x => x.Vote)
-					.Select(x => new ResultsResponse(x.Key, x.ToArray()));
+					.Select(x => new ResultsResponse(x.Key, x.ToArray()))
+					.OrderByDescending(x => x.Votes.Sum(x => (int)x.Vote));
 
 			return new OkObjectResult(result);
 		}
