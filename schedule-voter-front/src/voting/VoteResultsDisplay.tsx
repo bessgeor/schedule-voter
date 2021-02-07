@@ -34,7 +34,7 @@ function VoteResultForDate({date, votes} : VoteResult) {
 
 	return (
 		<div className="vote-result">
-			<h2>{date.format("DD.MM.YYYY")}</h2>
+			<h2>{date.format("DD.MM.YYYY HHч")}</h2>
 			<div>Желающих: {want.length + may.length}</div>
 			<div className="want">Хотят пойти: {want.length}</div>
 			<div className="may">Могут пойти (а могут и не пойти): {may.length}</div>
@@ -80,7 +80,7 @@ export function VoteResultsDisplay({ staticName, dates, voted, goVote }: VoteRes
 	return (
 		<div className="vote-results">
 			<div className="vote-results__dates">
-				{usefulResults.map(x => <VoteResultForDate key={x.date.format("YYYY-MM-DD")} {...x} />)}
+				{usefulResults.map(x => <VoteResultForDate key={x.date.format("YYYY-MM-DD HHч")} {...x} />)}
 			</div>
 			<button type="button" onClick={goVote}>{voted ? 'Проголосовать заново' : 'Проголосовать'}</button>
 		</div>
