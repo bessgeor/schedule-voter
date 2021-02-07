@@ -34,7 +34,7 @@ function VoteResultForDate({date, votes} : VoteResult) {
 
 	return (
 		<div className="vote-result">
-			<h2>{date.format("DD.MM.YYYY HHч")}</h2>
+			<h2>{moment.utc(date).local().format("DD.MM.YYYY HHч")}</h2>
 			<div>Желающих: {want.length + may.length}</div>
 			<div className="want">Хотят пойти: {want.length}</div>
 			<div className="may">Могут пойти (а могут и не пойти): {may.length}</div>
