@@ -1,3 +1,4 @@
+import './voteResultsDisplay.css'
 import React from 'react'
 import moment from 'moment'
 import { Vote } from './types'
@@ -22,7 +23,7 @@ function Voter(x: { gw2Acc: string, disAcc: string, className: string }) {
 	const clNm = React.useMemo(() => `voter ${x.className}`, [x.className])
 	return (
 		<div className={clNm}>
-			<span>{x.disAcc}</span>/<span>{x.disAcc}</span>
+			<span>{x.disAcc}</span>/<span>{x.gw2Acc}</span>
 		</div>
 	)
 }
@@ -33,9 +34,10 @@ function VoteResultForDate({date, votes} : VoteResult) {
 
 	return (
 		<div className="vote-result">
-			<b>{date.format("DD.MM.YYYY")}</b>
+			<h2>{date.format("DD.MM.YYYY")}</h2>
+			<div>Желающих: {want.length + may.length}</div>
 			<div className="want">Хотят пойти: {want.length}</div>
-			<div className="may">Хотят пойти: {may.length}</div>
+			<div className="may">Могут пойти (а могут и не пойти): {may.length}</div>
 			<div className="voters">
 				{want.map(x => <Voter key={x.disAcc} className="want" {...x} />)}
 				{may.map(x => <Voter key={x.disAcc} className="may" {...x} />)}
@@ -60,9 +62,9 @@ export function VoteResultsDisplay({ staticName, dates, voted, goVote }: VoteRes
 			}
 		}).then(x => x.json()).then((x: any[]) => x.map(x => ({ ...x, date: moment.utc(x.date) }))).then(setResults).finally(setLoaded)
 		return () => aborter.abort()
-	})
+	}, [42])
 
-	const usefulResults = React.useMemo(() => results.map(x => ({date: x.date, votes: x.votes.filter(x => x.vote != Vote.CantAttend)})).filter(x => x.votes.length > 0), results)
+	const usefulResults = React.useMemo(() => results.map(x => ({date: x.date, votes: x.votes.filter(x => x.vote != Vote.CantAttend)})).filter(x => x.votes.length > 0), [results])
 
 	if (loading)
 		return <span>Загружается...</span>
