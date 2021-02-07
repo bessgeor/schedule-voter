@@ -17,7 +17,7 @@ namespace schedule_voter_back
 	{
 		[FunctionName("schedule_voter_back_results")]
 		public static async Task<IActionResult> Run(
-				[HttpTrigger(AuthorizationLevel.Anonymous, "post", "POST", Route = "/results")] HttpRequest req,
+				[HttpTrigger(AuthorizationLevel.Anonymous, "post", "POST", Route = "results")] HttpRequest req,
 				ILogger log)
 		{
 			var ct = req.HttpContext.RequestAborted;
