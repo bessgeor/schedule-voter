@@ -8,8 +8,8 @@ export enum Vote {
 export function voteToString(v: Vote) {
 	switch (v) {
 		case Vote.CantAttend: return 'Не пойду'
-		case Vote.MayAttend: return 'Могу пойти'
-		case Vote.WantAttend: return 'Хочу пойти'
+		case Vote.MayAttend: return 'Наверное пойду'
+		case Vote.WantAttend: return 'Пойду'
 	}
 }
 

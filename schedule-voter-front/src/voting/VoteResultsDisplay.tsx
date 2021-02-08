@@ -36,8 +36,8 @@ function VoteResultForDate({date, votes} : VoteResult) {
 		<div className="vote-result">
 			<h2>{moment.utc(date).local().format("DD.MM.YYYY HHч")}</h2>
 			<div>Желающих: {want.length + may.length}</div>
-			<div className="want">Хотят пойти: {want.length}</div>
-			<div className="may">Могут пойти (а могут и не пойти): {may.length}</div>
+			<div className="want">Точно пойдут: {want.length}</div>
+			<div className="may">Наверное пойдут: {may.length}</div>
 			<div className="voters">
 				{want.map(x => <Voter key={x.disAcc} className="want" {...x} />)}
 				{may.map(x => <Voter key={x.disAcc} className="may" {...x} />)}
