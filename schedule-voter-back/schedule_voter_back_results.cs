@@ -5,9 +5,8 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-using Newtonsoft.Json;
 
-using System.IO;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
