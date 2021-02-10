@@ -25,10 +25,17 @@ namespace schedule_voter_back
 
 			var body = JsonHelper.Deserialize<ResultsRequest>(req);
 
+			var filterDate = DateTime.UtcNow.AddMinutes(14).AddSeconds(50);
+
+			var dates =
+				body.ShowPast == true
+				? body.Dates
+				: body.Dates.Where(x => x > filterDate).ToArray();
+
 			var dbResult =
 				await db
 					.VoteResults
-					.Where(x => x.User.StaticName == body.StaticName && body.Dates.Contains(x.Tourney))
+					.Where(x => x.User.StaticName == body.StaticName && dates.Contains(x.Tourney))
 					.Select(x => new
 					{
 						Date = x.Tourney,
