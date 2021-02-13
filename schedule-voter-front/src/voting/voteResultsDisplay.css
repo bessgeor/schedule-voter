@@ -6,6 +6,15 @@
 	flex-direction: column;
 	overflow: hidden;
 }
+.results__filter {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.results__filter input {
+	min-width: 150px;
+	flex: 1;
+}
 .vote-results__dates {
 	flex: 1;
 	display: flex;
