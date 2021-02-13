@@ -25,7 +25,7 @@ namespace schedule_voter_back
 
 			var body = JsonHelper.Deserialize<ResultsRequest>(req);
 
-			var filterDate = DateTime.UtcNow.AddMinutes(14).AddSeconds(50);
+			var filterDate = DateTime.UtcNow.AddMinutes(-14).AddSeconds(-50);
 
 			var dates =
 				body.ShowPast == true
